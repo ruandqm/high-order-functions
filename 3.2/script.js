@@ -1,5 +1,12 @@
-function getData() {
+window.onload = function () {
+    const readStorage = window.localStorage.getItem('car')
+    if (readStorage != null) {
+        console.log(JSON.parse(readStorage))
+    }
+}
 
+function getData() {
+    //Capture inputs values
     const brand = document.getElementById('brand').value
     const model = document.getElementById('model').value
     const year = document.getElementById('year').value
@@ -12,6 +19,7 @@ function getData() {
         automatic = 'false'
     }
 
+    //create object car
     let car = {
         brand: brand,
         model: model,
@@ -19,5 +27,6 @@ function getData() {
         color: color,
         automatic: automatic
     }
-    console.log(car)
+    //save on local storage
+    window.localStorage.setItem('car', JSON.stringify(car))
 }

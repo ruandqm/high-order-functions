@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <form action="javascript: getData();" id="register">
+                <div class="formItem">
+                    <label for="brand">Marca</label>
+                    <input type="text" id="brand">
+                </div>
+                <div class="formItem">
+                    <label for="model">Modelo</label>
+                    <input type="text" id="model">
+                </div>
+                <div class="formItem">
+                    <label for="year">Ano</label>
+                    <input type="text" id="year">
+                </div>
+                <div class="formItem">
+                    <label for="value">Valor</label>
+                    <input type="text" id="value">
+                </div>
+                <div class="formItem">
+                    <label for="color">Cor</label>
+                    <input type="text" id="color">
+                </div>
+                <div class="formItem">
+                    <label>Automático</label>
+                    <input type="radio" id="yes" name="automatic" value="true">
+                    <label for="huey">Sim</label>
+                    <input type="radio" id="not" name="automatic" value="false">
+                    <label for="dewey">Não</label>
+                </div>
+                <button type="submit" id="submit">Cadastrar
+            </form>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

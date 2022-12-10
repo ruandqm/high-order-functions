@@ -29,7 +29,6 @@ function searchByProperty(cars, properties) {
         filteredCars.push(car)
     }
     console.log(filteredCars)
-    //console.log(properties)
 }
 
 //calls

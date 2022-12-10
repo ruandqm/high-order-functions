@@ -1,11 +1,16 @@
+function readLocalStorage() {
+    const storageData = JSON.parse(window.localStorage.getItem('car'))
+    return (storageData)
+}
+
+//impress data on console when page is reloaded
 window.onload = function () {
-    const readStorage = window.localStorage.getItem('car')
-    if (readStorage != null) {
-        console.log(JSON.parse(readStorage))
+    if (readLocalStorage() != undefined) {
+        console.log(readLocalStorage())
     }
 }
 
-function getData() {
+function getFormData() {
     //Capture inputs values
     const brand = document.getElementById('brand').value
     const model = document.getElementById('model').value
@@ -27,6 +32,15 @@ function getData() {
         color: color,
         automatic: automatic
     }
-    //save on local storage
-    window.localStorage.setItem('car', JSON.stringify(car))
+    addCar(car)
 }
+
+function addCar(car) {
+    let cars = readLocalStorage()
+    if (!cars) {
+        cars = []
+    }
+    cars.push(car)
+    window.localStorage.setItem('car', JSON.stringify(cars))
+}
+
